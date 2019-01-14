@@ -1,0 +1,44 @@
+Problem: Given a list of numbers, return whether a list contains Pythagorean Triplets
+
+Step 1: Clarify the question
+  - Could you explain what a Pythagorean Triplet is?
+  - What type should the return value be? Bool? The list of numbers?
+
+Step 2: Inputs and Edge Cases
+  - Go through some sample inputs and edge cases to make sure things are understood and to clarify how to handle some edge cases
+  - Ex. [3,4,5] => True
+  - [1,3,12] => False
+  - [4] => How should I handle this?
+  - [-3,4,5] => How should I handle this?
+
+Step 3: Outline the Solution
+  - First solution that comes to mind is to have 3 nested loops
+    -> However this time complexity will be quite poor
+    -> What is a better solution? Is there any?
+  - Better solution: Sort and square the list first, then see if any 2 values(a^2 + b^2) = final value (c^2)
+    -> If no, move a one smaller
+    -> repeat
+      -> Use meet in middle approach for a,b for best time
+
+Step 4: Code the solution
+  - Explain what part of outline I'm are currently working on, talk through what I am doing with the interviewer
+  - Code in Pythagorean-triplets.py
+
+Step 5: Testing with inputs
+  - Use test inputs and implementation to talk through the solution
+  - Walking through the code helps to
+    - Catch mistakes (if whiteboard exercise)
+    - Can give the interviewer a chance to question if another type of input will function (Ex. [5,4,3])
+      -> Does the code perform correctly if the numbers are not in ascending order?
+  - Also in Pythagorean-triplets.py
+
+Step 6: Analyze the solution
+  - Explain my code's big O notation (time and space complexity)
+  - Can I optimize my solution to improve either big O? 
+
+  - Time: O(n^2)
+    => sort = O(nlogn)
+    => for loop + nested while = O(n) * O(n) = O(n^2)
+
+  - Space: O(n)
+    => Only holds n size list + constants
